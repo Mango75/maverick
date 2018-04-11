@@ -1,3 +1,100 @@
-header{
-    background:lavender;
+
+.container{
+    
+    header{
+        
+        .logo{
+            grid-area: logo;
+        }
+        .navigation{
+            grid-area: navigation;
+            text-align: center;
+            nav{
+                ul{
+                    li{
+                        display: inline-block;
+                    }
+                }
+            }
+        
+        }
+        grid-area: header;
+        display:grid;
+        background:lavender;
+        grid-template-columns: auto auto auto;
+        grid-template-areas: "logo navigation navigation";
+    }
+    .content{
+        grid-area: content;
+        .list{
+            border: 1px #eee solid;
+            h3{
+                font-family: 'Playfair Display', serif;  
+            }
+            &--actions{
+                border: 1px #eee solid;
+                        float: right;
+                        a{ 
+                            display:inline-block;
+                            padding: 3px 10px;
+                        }    
+            }
+            .task--action__add{
+                #taskTitle,#taskDescription{
+                    display: block;
+                    width:70%;
+                }     
+            }
+            #tasks{
+                list-style: none;
+                .task{
+                    border-bottom: 1px #eee solid;
+                    &:last-of-type{
+                        border-bottom: none;
+                    }
+                    &--title{
+                        font-family: 'Playfair Display', serif;
+                    }
+                    &--desc{
+                        font-family: 'Lato', sans-serif;
+                    }
+                    &--actions{
+                        border: 1px #eee solid;
+                        float: right;
+                        a{ 
+                            display:inline-block;
+                            padding: 3px 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .footer{
+        grid-area: footer;
+        width:100%;
+        background: lavender;
+         &--columns{
+                width:25%;
+                float:left;
+                text-align:center;
+                &__icon{
+                    border-radius: 50%;
+                    width: 40px;
+                    height: 40px;
+                    background: white;
+                    margin:20px auto;
+                }
+            }
+    }
+    display:grid;
+    width:80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto;
+    grid-template-areas: "header header header"
+                         "content content content"
+                         "footer footer footer";
+    
 }

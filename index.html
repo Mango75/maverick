@@ -2,9 +2,12 @@
 <html>
     <head>
         <title>Maverick Todo-list</title>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Lato|Playfair+Display" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
+        <div class="container">
         <header>
             <div class="logo">
                 Logo
@@ -22,49 +25,60 @@
         </header>
         <section class="content">
             <h1>Heading </h1>
+            <div class="list--add">
+                <input type="text" class="listTitle">
+                <a href="#"><i class="fas fa-plus-circle"></i>Add list</a>
+            </div>
             <div class="list">
                 <h3>List title</h3>
+                <div class="task--action__add">
+                    <input type="text" id="taskTitle" placeholder="Add a title">
+                    <textarea name="desc" id="taskDescription" cols="30" rows="3">Add a description</textarea>
+                    <a href="#" onclick="theList.addTask()"><i class="fas fa-plus-circle"></i>Add task</a>
+                </div>
+                <div id="testList"></div>
                 <ul id="tasks">
                     <li class="task">
-                        <h4 class="task--title">List title</h4>
-                        <div class="task--desc"></div>
+                        <h4 class="task--title">Task title</h4>
+                        <p class="task--desc">Task description</p>
                         <div class="task--actions">
-                            <a href="#" class="task--actions__edit">Edit</a>
-                            <a href="#" class="task--actions__save">Save</a>
-                            <a href="#" class="task--actions__mark">Mark as done</a>
-                            <a href="#" class="task--actions__delete">Delete</a>
+                            <a href="#" class="task--actions__edit"><i class="fas fa-pencil-alt"></i>Edit</a>
+                            <a href="#" class="task--actions__mark"><i class="fas fa-check-circle"></i>Mark as done</a>
+                            <a href="#" class="task--actions__delete"><i class="fas fa-minus-circle"></i>Delete</a>
                         </div>
                     </li>
                 </ul>
                 <div class="list--actions">
-                    <a href="#" class="list--actions__copy">Copy</a>
-                    <a href="#" class="list--actions__save">Save</a>
-                    <a href="#" class="list--actions__delete">Delete</a>></a>
+                    <a href="#" class="list--actions__copy"><i class="fas fa-copy"></i>Copy</a>
+                    <a href="#" class="list--actions__save"><i class="fas fa-save"></i>Save</a>
+                    <a href="#" class="list--actions__delete"><i class="fas fa-minus-circle"></i>Delete</a>></a>
                 </div>
             </div>
         </section>
-        <footer>
+        <footer class="footer">
             <div class="footer--columns">
-                <div class="footer--column__icon"></div>
-                <h3></h3>
+                <div class="footer--columns__icon"></div>
+                <h3>Love</h3>
                 <p></p>
             </div>
             <div class="footer--columns">
-                <div class="footer--column__icon"></div>
-                <h3></h3>
+                <div class="footer--columns__icon"></div>
+                <h3>Obsess</h3>
                 <p></p>
             </div>
             <div class="footer--columns">
-                <div class="footer--column__icon"></div>
-                <h3></h3>
+                <div class="footer--columns__icon"></div>
+                <h3>Finetune</h3>
                 <p></p>
             </div>
             <div class="footer--columns">
-                <div class="footer--column__icon"></div>
-                <h3></h3>
+                <div class="footer--columns__icon"></div>
+                <h3>Apply</h3>
                 <p></p>
             </div>
         </footer>
-        <script src="js/app.js">
-        </script>
+    </div>
+    <script src="js/app.js">
+    </script>
     </body>
+</html>
