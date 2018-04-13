@@ -94,26 +94,29 @@ body {
             display: block;
             width: 100%;
             box-sizing: border-box; }
-        body .container .content .list #tasks {
+        body .container .content .list #todo {
           list-style: none; }
-          body .container .content .list #tasks .task {
+          body .container .content .list #todo .task {
             border-bottom: 1px #eee solid; }
-            body .container .content .list #tasks .task:last-of-type {
+            body .container .content .list #todo .task:last-of-type {
               border-bottom: none; }
-            body .container .content .list #tasks .task--title {
-              font-family: "Playfair Display", serif; }
-            body .container .content .list #tasks .task--desc {
-              font-family: "Lato", sans-serif; }
-            body .container .content .list #tasks .task--actions {
+            body .container .content .list #todo .task--title {
+              font-family: "Playfair Display", serif;
+              font-size: 1.5em; }
+            body .container .content .list #todo .task--desc {
+              font-family: "Lato", sans-serif;
+              font-size: 1.5em; }
+            body .container .content .list #todo .task--actions {
               border: 1px #eee solid;
               float: right; }
-              body .container .content .list #tasks .task--actions a {
+              body .container .content .list #todo .task--actions a {
                 display: inline-block;
                 padding: 3px 10px; }
     body .container .footer {
       grid-area: footer;
       width: 100%;
-      background: lavender; }
+      background: lavender;
+      border-top: 2px solid darkslategrey; }
       body .container .footer--columns {
         width: 25%;
         float: left;
@@ -123,7 +126,8 @@ body {
           width: 40px;
           height: 40px;
           background: white;
-          margin: 20px auto; }
+          margin: 20px auto;
+          padding: 7px; }
           body .container .footer--columns__icon svg {
             width: 80%;
             margin: auto; }
