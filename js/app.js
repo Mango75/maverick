@@ -1,5 +1,7 @@
 
 function List(){
+    var tasks =Array();
+    localStorage.setItem('lists', tasks);
     this.addTask=function(){    
         var tasks=JSON.parse(localStorage.getItem('lists'));
         var taskTitle = document.getElementById('addTitle').value;
@@ -17,13 +19,20 @@ function List(){
    this.removeTask=function(indx){
     var tasks=JSON.parse(localStorage.getItem('lists'));
        tasks.splice(indx,1);
-       this.localSave(tasks);
        this.renderLists();
+       this.localSave(tasks);
+       
    };
    this.markTask=function(indx){
     var tasks=JSON.parse(localStorage.getItem('lists'));
         tasks[indx].done='done';
-       this.localSave(tasks);
+        this.localSave(tasks);
+        var actions = document.getElementsByClassName('task--actions___'+indx)[0];
+        actions.classList.add('hide');
+   };
+   this.toggleEdit=function(indx){
+       var edit=document.getElementsByClassName('task--action__edit__'+indx)[0];
+       edit.classList.remove("hide");
    };
    this.editTask=function(indx){
     var title=document.getElementById(indx+"edit-title").value;
@@ -32,6 +41,8 @@ function List(){
     tasks[indx].title=title;
     tasks[indx].description=desc;
     this.localSave(tasks);
+    var edit=document.getElementsByClassName('task--action__edit__'+indx)[0];
+       edit.classList.add("hide");
 };
    this.localSave=function(obj){
         localStorage.setItem('lists',JSON.stringify(obj));
@@ -48,14 +59,8 @@ function List(){
        for(i=0; i< tasks.length; i++){
             template+= '<li><h4 class="task--title '+tasks[i].done+'">'+tasks[i].title+'</h4>\
                               <p class="task--desc '+tasks[i].done+'">'+tasks[i].description+'</p>\
-                              <div class="hide task--action__edit__'+i+'">\
-                                    <input type="text" id="'+i+'edit-title" placeholder="Edit title">\
-                                    <textarea name="desc" id="'+i+'edit-desc" cols="30" rows="3 placeholder="Edit task"></textarea>\
-                                    <a href="#"data-index="'+i+'" onclick="theList.editTask(this.dataset.index)""><i class="fas fa-plus-circle"></i>save</a>\
-                                </div>\
-                                <div class="task--actions___'+i+'">\
+                                <div style="text-align:left;" class="task--actions___'+i+' '+tasks[i].done+'">\
                                   <a href="#" class="task--actions__mark" data-index="'+i+'" onclick="theList.markTask(this.dataset.index)"><i class="fas fa-check-circle"></i>Mark as done</a>\
-                                  <a href="#" class="task--actions__edit"  data-index="'+i+'" ><i class="fas fa-minus-circle"></i>Edit</a>\
                                   <a href="#" class="task--actions__delete"  data-index="'+i+'" onclick="theList.removeTask(this.dataset.index)"><i class="fas fa-minus-circle"></i>Delete</a>\
                                </div></li>';
     

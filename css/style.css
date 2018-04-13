@@ -1,74 +1,123 @@
 .done {
   text-decoration: line-through; }
 
-.container {
-  display: grid;
-  width: 80%;
-  max-width: 1200px;
-  margin: 0 auto;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: auto;
-  grid-template-areas: "header header header" "content content content" "footer footer footer"; }
-  .container header {
-    grid-area: header;
+.hide {
+  display: none; }
+
+body {
+  background: #efefef; }
+  body .container {
+    background: #fff;
     display: grid;
-    background: lavender;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
     grid-template-columns: auto auto auto;
-    grid-template-areas: "logo navigation navigation"; }
-    .container header .logo {
-      grid-area: logo;
-      font-style: italic;
-      color: darkslategrey; }
-    .container header .navigation {
-      grid-area: navigation;
-      text-align: center;
-      font-family: "Lato", sans-serif; }
-      .container header .navigation nav ul li {
-        display: inline-block;
-        padding: 5px 7px;
-        font-size: 1.2em; }
-  .container .content {
-    grid-area: content; }
-    .container .content .list {
-      border: 1px #eee solid; }
-      .container .content .list h3 {
-        font-family: "Playfair Display", serif; }
-      .container .content .list--actions {
-        border: 1px #eee solid;
-        float: right; }
-        .container .content .list--actions a {
+    grid-template-rows: auto;
+    grid-template-areas: "header header header" "content content content" "footer footer footer"; }
+    body .container header {
+      padding: 20px;
+      grid-area: header;
+      display: grid;
+      background: lavender;
+      grid-template-columns: auto auto auto;
+      grid-template-areas: "logo navigation navigation";
+      align-items: center;
+      border-bottom: 2px solid darkslategrey; }
+      body .container header .logo {
+        grid-area: logo;
+        font-family: "Playfair Display", serif;
+        font-size: 1.1em;
+        color: d darkslategrey; }
+      body .container header .navigation {
+        grid-area: navigation;
+        text-align: center;
+        font-family: "Lato", sans-serif; }
+        body .container header .navigation nav ul li {
           display: inline-block;
-          padding: 3px 10px; }
-      .container .content .list .task--action__add #taskTitle, .container .content .list .task--action__add #taskDescription {
-        display: block;
-        width: 70%; }
-      .container .content .list #tasks {
+          padding: 5px 7px;
+          font-size: 1.2em; }
+          body .container header .navigation nav ul li a {
+            text-decoration: none; }
+    body .container .content {
+      grid-area: content;
+      font-family: "Lato", sans-serif;
+      background: #fff;
+      padding: 40px; }
+      body .container .content h1 {
+        text-align: center; }
+      body .container .content ul {
         list-style: none; }
-        .container .content .list #tasks .task {
+        body .container .content ul li {
           border-bottom: 1px #eee solid; }
-          .container .content .list #tasks .task:last-of-type {
-            border-bottom: none; }
-          .container .content .list #tasks .task--title {
-            font-family: "Playfair Display", serif; }
-          .container .content .list #tasks .task--desc {
-            font-family: "Lato", sans-serif; }
-          .container .content .list #tasks .task--actions {
-            border: 1px #eee solid;
-            float: right; }
-            .container .content .list #tasks .task--actions a {
-              display: inline-block;
-              padding: 3px 10px; }
-  .container .footer {
-    grid-area: footer;
-    width: 100%;
-    background: lavender; }
-    .container .footer--columns {
-      width: 25%;
-      float: left;
-      text-align: center; }
-      .container .footer--columns__icon {
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        background: white;
-        margin: 20px auto; }
+          body .container .content ul li h4 {
+            font-size: 1em; }
+          body .container .content ul li p {
+            font-size: 1em; }
+      body .container .content a i {
+        font-size: 1.5em;
+        margin: 5px; }
+      body .container .content .addBtn {
+        font-size: 3em; }
+      body .container .content textarea, body .container .content input {
+        width: 100%;
+        display: block;
+        box-sizing: border-box;
+        margin: 10px;
+        font-size: 1.1em;
+        background: #fff; }
+      body .container .content .list {
+        border: 1px #eee solid; }
+        body .container .content .list h3 {
+          font-family: "Playfair Display", serif;
+          text-align: center; }
+        body .container .content .list--actions {
+          border: 1px #eee solid;
+          float: right; }
+          body .container .content .list--actions a {
+            display: inline-block;
+            padding: 3px 10px; }
+        body .container .content .list .task--action__add {
+          width: 100%;
+          box-sizing: border-box;
+          padding: 20px 20%;
+          background: #eee;
+          float: #taskTitle, #taskDescription;
+            float-display: block;
+            float-width: 100%;
+            float-box-sizing: border-box; }
+        body .container .content .list #tasks {
+          list-style: none; }
+          body .container .content .list #tasks .task {
+            border-bottom: 1px #eee solid; }
+            body .container .content .list #tasks .task:last-of-type {
+              border-bottom: none; }
+            body .container .content .list #tasks .task--title {
+              font-family: "Playfair Display", serif; }
+            body .container .content .list #tasks .task--desc {
+              font-family: "Lato", sans-serif; }
+            body .container .content .list #tasks .task--actions {
+              border: 1px #eee solid;
+              float: right; }
+              body .container .content .list #tasks .task--actions a {
+                display: inline-block;
+                padding: 3px 10px; }
+    body .container .footer {
+      grid-area: footer;
+      width: 100%;
+      background: lavender; }
+      body .container .footer--columns {
+        width: 25%;
+        float: left;
+        text-align: center; }
+        body .container .footer--columns__icon {
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          background: white;
+          margin: 20px auto; }
+          body .container .footer--columns__icon i {
+            font-size: 2em;
+            margin: auto;
+            display: block;
+            float: left; }

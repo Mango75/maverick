@@ -1,19 +1,30 @@
 
 $playfair: 'Playfair Display', serif; 
 $lato:  'Lato', sans-serif;
+$white: #fff;
+$gray: #efefef;
+$borderColor: #eee;
+$darkgrey:darkslategrey;
 
 
 .done{
     text-decoration: line-through; 
 }
+.hide{
+    display: none;
+}
+body{
+    background:$gray;
 .container{
-    
+    background:$white;
     header{
-        
+        padding: 20px;
         .logo{
             grid-area: logo;
-            font-style: italic;
-            color:darkslategrey;
+            font-family: $playfair;
+            font-size: 1.1em;
+            color:d$darkgrey;
+
         }
         .navigation{
             grid-area: navigation;
@@ -25,6 +36,9 @@ $lato:  'Lato', sans-serif;
                         display: inline-block;
                         padding:5px 7px;
                         font-size:1.2em;
+                        a{
+                            text-decoration: none;
+                        }
                     }
                 }
             }
@@ -35,16 +49,53 @@ $lato:  'Lato', sans-serif;
         background:lavender;
         grid-template-columns: auto auto auto;
         grid-template-areas: "logo navigation navigation";
+        align-items: center;
+        border-bottom: 2px solid $darkgrey;
     }
     .content{
         grid-area: content;
+        font-family: $lato;
+        background: #fff;
+        padding: 40px;
+        h1{
+            text-align: center;
+        }
+        ul{
+            list-style: none;
+            li{
+                border-bottom: 1px $borderColor solid;
+                h4{
+                    font-size: 1em;
+                }
+                p {
+                    font-size:1em; 
+                }
+            }
+        }
+        a i{
+            font-size: 1.5em;
+            margin: 5px;
+        }
+        .addBtn{
+            font-size:3em;
+
+        }
+        textarea, input{
+            width:100%;
+            display: block;
+            box-sizing: border-box;
+            margin:10px;
+            font-size:1.1em;
+            background: $white;
+        }
         .list{
-            border: 1px #eee solid;
+            border: 1px $borderColor solid;
             h3{
-                font-family: $playfair;  
+                font-family: $playfair;
+                text-align: center;  
             }
             &--actions{
-                border: 1px #eee solid;
+                border: 1px $borderColor solid;
                         float: right;
                         a{ 
                             display:inline-block;
@@ -52,9 +103,16 @@ $lato:  'Lato', sans-serif;
                         }    
             }
             .task--action__add{
+                width:100%;
+                box-sizing: border-box;
+                padding: 20px 20%;
+                background: $borderColor;
+                float:
+
                 #taskTitle,#taskDescription{
                     display: block;
-                    width:70%;
+                    width:100%;
+                    box-sizing: border-box;
                 }     
             }
             #tasks{
@@ -96,6 +154,12 @@ $lato:  'Lato', sans-serif;
                     height: 40px;
                     background: white;
                     margin:20px auto;
+                    i{
+                        font-size: 2em;
+                        margin:auto;
+                        display: block;
+                        float:left;
+                    }
                 }
             }
     }
@@ -109,4 +173,5 @@ $lato:  'Lato', sans-serif;
                          "content content content"
                          "footer footer footer";
     
+}
 }
