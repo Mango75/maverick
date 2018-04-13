@@ -1,18 +1,30 @@
 
+$playfair: 'Playfair Display', serif; 
+$lato:  'Lato', sans-serif;
+
+
+.done{
+    text-decoration: line-through; 
+}
 .container{
     
     header{
         
         .logo{
             grid-area: logo;
+            font-style: italic;
+            color:darkslategrey;
         }
         .navigation{
             grid-area: navigation;
             text-align: center;
+            font-family: $lato;
             nav{
                 ul{
                     li{
                         display: inline-block;
+                        padding:5px 7px;
+                        font-size:1.2em;
                     }
                 }
             }
@@ -29,7 +41,7 @@
         .list{
             border: 1px #eee solid;
             h3{
-                font-family: 'Playfair Display', serif;  
+                font-family: $playfair;  
             }
             &--actions{
                 border: 1px #eee solid;
@@ -53,10 +65,10 @@
                         border-bottom: none;
                     }
                     &--title{
-                        font-family: 'Playfair Display', serif;
+                        font-family: $playfair;
                     }
                     &--desc{
-                        font-family: 'Lato', sans-serif;
+                        font-family: $lato;
                     }
                     &--actions{
                         border: 1px #eee solid;

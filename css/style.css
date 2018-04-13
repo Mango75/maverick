@@ -1,3 +1,6 @@
+.done {
+  text-decoration: line-through; }
+
 .container {
   display: grid;
   width: 80%;
@@ -13,18 +16,23 @@
     grid-template-columns: auto auto auto;
     grid-template-areas: "logo navigation navigation"; }
     .container header .logo {
-      grid-area: logo; }
+      grid-area: logo;
+      font-style: italic;
+      color: darkslategrey; }
     .container header .navigation {
       grid-area: navigation;
-      text-align: center; }
+      text-align: center;
+      font-family: "Lato", sans-serif; }
       .container header .navigation nav ul li {
-        display: inline-block; }
+        display: inline-block;
+        padding: 5px 7px;
+        font-size: 1.2em; }
   .container .content {
     grid-area: content; }
     .container .content .list {
       border: 1px #eee solid; }
       .container .content .list h3 {
-        font-family: 'Playfair Display', serif; }
+        font-family: "Playfair Display", serif; }
       .container .content .list--actions {
         border: 1px #eee solid;
         float: right; }
@@ -41,9 +49,9 @@
           .container .content .list #tasks .task:last-of-type {
             border-bottom: none; }
           .container .content .list #tasks .task--title {
-            font-family: 'Playfair Display', serif; }
+            font-family: "Playfair Display", serif; }
           .container .content .list #tasks .task--desc {
-            font-family: 'Lato', sans-serif; }
+            font-family: "Lato", sans-serif; }
           .container .content .list #tasks .task--actions {
             border: 1px #eee solid;
             float: right; }
