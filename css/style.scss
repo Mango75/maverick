@@ -76,8 +76,11 @@ body{
             font-size: 1.5em;
             margin: 5px;
         }
-        .addBtn{
-            font-size:3em;
+        a.addBtn{
+            font-size:2em;
+            line-height: 2em;
+            display: block;
+            text-align: center;
 
         }
         textarea, input{
@@ -107,7 +110,13 @@ body{
                 box-sizing: border-box;
                 padding: 20px 20%;
                 background: $borderColor;
-                float:
+
+                a{
+                    font-size:1.5em;
+                    text-align: center;
+                    font-size:2em;
+                    display:block;
+                }
 
                 #taskTitle,#taskDescription{
                     display: block;
@@ -154,11 +163,9 @@ body{
                     height: 40px;
                     background: white;
                     margin:20px auto;
-                    i{
-                        font-size: 2em;
+                    svg{
+                        width: 80%;
                         margin:auto;
-                        display: block;
-                        float:left;
                     }
                 }
             }

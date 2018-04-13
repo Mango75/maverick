@@ -1,7 +1,11 @@
 
 function List(){
+    if(localStorage.getItem('lists')){
+        tasks=JSON.parse(localStorage.getItem('lists'));
+    }else{
     var tasks =Array();
-    localStorage.setItem('lists', tasks);
+    localStorage.setItem('lists', JSON.stringify(tasks));
+    }
     this.addTask=function(){    
         var tasks=JSON.parse(localStorage.getItem('lists'));
         var taskTitle = document.getElementById('addTitle').value;
@@ -19,7 +23,7 @@ function List(){
    this.removeTask=function(indx){
     var tasks=JSON.parse(localStorage.getItem('lists'));
        tasks.splice(indx,1);
-       this.renderLists();
+       this.renderList();
        this.localSave(tasks);
        
    };

@@ -57,8 +57,11 @@ body {
       body .container .content a i {
         font-size: 1.5em;
         margin: 5px; }
-      body .container .content .addBtn {
-        font-size: 3em; }
+      body .container .content a.addBtn {
+        font-size: 2em;
+        line-height: 2em;
+        display: block;
+        text-align: center; }
       body .container .content textarea, body .container .content input {
         width: 100%;
         display: block;
@@ -81,11 +84,16 @@ body {
           width: 100%;
           box-sizing: border-box;
           padding: 20px 20%;
-          background: #eee;
-          float: #taskTitle, #taskDescription;
-            float-display: block;
-            float-width: 100%;
-            float-box-sizing: border-box; }
+          background: #eee; }
+          body .container .content .list .task--action__add a {
+            font-size: 1.5em;
+            text-align: center;
+            font-size: 2em;
+            display: block; }
+          body .container .content .list .task--action__add #taskTitle, body .container .content .list .task--action__add #taskDescription {
+            display: block;
+            width: 100%;
+            box-sizing: border-box; }
         body .container .content .list #tasks {
           list-style: none; }
           body .container .content .list #tasks .task {
@@ -116,8 +124,6 @@ body {
           height: 40px;
           background: white;
           margin: 20px auto; }
-          body .container .footer--columns__icon i {
-            font-size: 2em;
-            margin: auto;
-            display: block;
-            float: left; }
+          body .container .footer--columns__icon svg {
+            width: 80%;
+            margin: auto; }
