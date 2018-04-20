@@ -68,7 +68,8 @@ body {
         box-sizing: border-box;
         margin: 10px;
         font-size: 1.1em;
-        background: #fff; }
+        background: #fff;
+        border: 1px solid darkslategrey; }
       body .container .content .list {
         border: 1px #eee solid; }
         body .container .content .list h3 {
@@ -102,7 +103,7 @@ body {
               border-bottom: none; }
             body .container .content .list #todo .task--title {
               font-family: "Playfair Display", serif;
-              font-size: 1.5em; }
+              font-size: 1.8em; }
             body .container .content .list #todo .task--desc {
               font-family: "Lato", sans-serif;
               font-size: 1.5em; }

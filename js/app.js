@@ -6,32 +6,33 @@ function List(){
     var tasks =Array();
     localStorage.setItem('lists', JSON.stringify(tasks));
     }
+    var taskTitle = document.getElementById('addTitle');
+    var taskDesc = document.getElementById('addDesc');
     this.addTask=function(){    
         var tasks=JSON.parse(localStorage.getItem('lists'));
-        var taskTitle = document.getElementById('addTitle').value;
-        var taskDesc = document.getElementById('addDesc').value;
         var task ={
-            title : taskTitle,
-            description: taskDesc,
+            title : taskTitle.value,
+            description: taskDesc.value,
             done: 'open'
             };
         tasks.push(task);
         this.localSave(tasks);
-        taskTitle.value= '';
-        taskDesc.value= '';
+        this.renderList();
+       
+        
         };
    this.removeTask=function(indx){
     var tasks=JSON.parse(localStorage.getItem('lists'));
        tasks.splice(indx,1);
-       this.renderList();
        this.localSave(tasks);
+       this.renderList();
        
    };
    this.markTask=function(indx){
     var tasks=JSON.parse(localStorage.getItem('lists'));
         tasks[indx].done='done';
         this.localSave(tasks);
-        var actions = document.getElementsByClassName('task--actions___'+indx)[0];
+        var actions = document.querySelector('.task--actions___'+indx);
         actions.classList.add('hide');
    };
    this.toggleEdit=function(indx){
@@ -73,6 +74,12 @@ function List(){
       list.innerHTML=template;
       container.appendChild(list);
    };
+   
+   function clearField(input){
+       input.value="";
+   }
+   taskTitle.addEventListener('focus',function(){clearField(this)});
+   taskDesc.addEventListener('focus',function(){clearField(this)});
 
 }
 var theList= new List;
